@@ -62,7 +62,6 @@ p=ggplot(res|>
 ```
 
 
-```{r, mr_fig, fig.width=8, fig.height=4}
+```{r, mr_fig, fig.width=8, fig.height=4, fig.alt = 'Joined scatter plot of the number of new PubMed entries per week containing Mendelian randomis/zation in the title.'}
 p
 ```
-
