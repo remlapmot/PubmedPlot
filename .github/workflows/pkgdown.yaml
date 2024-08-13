@@ -13,6 +13,8 @@ on:
 
 name: pkgdown
 
+permissions: read-all
+
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
