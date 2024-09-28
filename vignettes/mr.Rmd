@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(PubmedPlot)
+library(gtsummary)
 library(ggplot2)
 library(dplyr)
 ```
@@ -64,4 +65,52 @@ p=ggplot(res|>
 
 ```{r, mr_fig, fig.width=8, fig.height=4, fig.alt = 'Joined scatter plot of the number of new PubMed entries per week containing Mendelian randomis/zation in the title.'}
 p
+```
+
+Plot with y-axis on log scale.
+
+```{r}
+## plot ####
+plg <- ggplot(res |>
+  filter(time_level == "Weeks" & pubmed_date != max(pubmed_date, na.rm = FALSE)), aes(pubmed_date, log(n_publications))) +
+  # geom_smooth(se=F,colour='black')+
+  geom_point(size = .25, colour = mycol, alpha = 1) +
+  geom_line(alpha = .75, colour = mycol) +
+  geom_line(data = res %>% filter(time_level == "Weeks"), linetype = 2, alpha = .75, colour = mycol) +
+  scale_x_date(date_minor_breaks = "1 year") +
+  labs(
+    x = "Date",
+    y = paste(ylab_root, "per week (log scale)"),
+    caption = paste("Most recent publication date:", max(subset(res, time_level == "Weeks")$pubmed_date)),
+    x = "Date"
+  ) +
+  theme_mrlit()
+plg
+```
+
+Try fitting some log-linear models.
+
+```{r}
+dat <-
+  res |> 
+  select(n_publications, pubmed_date) |> 
+  mutate(
+    logy = log(n_publications + 1),
+    nrc = as.numeric(pubmed_date),
+    yrs = ((nrc - min(nrc, na.rm = TRUE)) / 365.25)
+  )
+```  
+
+```{r}  
+dat |>
+  lm(logy ~ yrs, data = _) |>
+  tbl_regression(intercept = TRUE)
+```
+
+Start the model from 2014-01-01.
+
+```{r}
+dat |>
+  lm(logy ~ yrs, data = _, subset = yrs >= as.numeric(as.Date('2014-01-01')) / 365.25) |>
+  tbl_regression(intercept = TRUE)
 ```
