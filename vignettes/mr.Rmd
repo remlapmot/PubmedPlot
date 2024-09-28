@@ -110,7 +110,12 @@ dat |>
 Start the model from 2014-01-01.
 
 ```{r}
-dat |>
-  lm(logy ~ yrs, data = _, subset = yrs >= as.numeric(as.Date('2014-01-01')) / 365.25) |>
+datlim <- dat |> 
+  filter(pubmed_date >= as.Date('2014-01-01'))
+```
+
+```{r}
+datlim |>
+  lm(logy ~ yrs, data = _) |>
   tbl_regression(intercept = TRUE)
 ```
