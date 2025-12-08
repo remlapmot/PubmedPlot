@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   abstracts: abstracts.html
   mr: mr.html
-last_built: 2025-12-01T03:04Z
+last_built: 2025-12-08T02:46Z
 urls:
   reference: https://remlapmot.github.io/PubmedPlot/reference
   article: https://remlapmot.github.io/PubmedPlot/articles
