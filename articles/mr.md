@@ -77,8 +77,8 @@ a <- PubmedPlot::search_term_by_year('"Mendelian randomisation" [tiab] OR "Mende
 #> Fetching records 1 to 182 
 #> Searching for year: 2016 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2016/01/01"[dp] : "2016/12/31"[dp]) 
-#> Found 235 articles matching the search term.
-#> Fetching records 1 to 235 
+#> Found 236 articles matching the search term.
+#> Fetching records 1 to 236 
 #> Searching for year: 2017 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2017/01/01"[dp] : "2017/12/31"[dp]) 
 #> Found 296 articles matching the search term.
@@ -99,29 +99,29 @@ a <- PubmedPlot::search_term_by_year('"Mendelian randomisation" [tiab] OR "Mende
 #> Fetching records 501 to 840 
 #> Searching for year: 2021 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2021/01/01"[dp] : "2021/12/31"[dp]) 
-#> Found 1226 articles matching the search term.
+#> Found 1228 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
-#> Fetching records 1001 to 1226 
+#> Fetching records 1001 to 1228 
 #> Searching for year: 2022 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2022/01/01"[dp] : "2022/12/31"[dp]) 
-#> Found 1650 articles matching the search term.
+#> Found 1654 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
 #> Fetching records 1001 to 1500 
-#> Fetching records 1501 to 1650 
+#> Fetching records 1501 to 1654 
 #> Searching for year: 2023 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2023/01/01"[dp] : "2023/12/31"[dp]) 
-#> Found 2976 articles matching the search term.
+#> Found 2980 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
 #> Fetching records 1001 to 1500 
 #> Fetching records 1501 to 2000 
 #> Fetching records 2001 to 2500 
-#> Fetching records 2501 to 2976 
+#> Fetching records 2501 to 2980 
 #> Searching for year: 2024 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2024/01/01"[dp] : "2024/12/31"[dp]) 
-#> Found 6427 articles matching the search term.
+#> Found 6435 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
 #> Fetching records 1001 to 1500 
@@ -134,10 +134,10 @@ a <- PubmedPlot::search_term_by_year('"Mendelian randomisation" [tiab] OR "Mende
 #> Fetching records 4501 to 5000 
 #> Fetching records 5001 to 5500 
 #> Fetching records 5501 to 6000 
-#> Fetching records 6001 to 6427 
+#> Fetching records 6001 to 6435 
 #> Searching for year: 2025 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2025/01/01"[dp] : "2025/12/31"[dp]) 
-#> Found 7112 articles matching the search term.
+#> Found 7131 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
 #> Fetching records 1001 to 1500 
@@ -152,13 +152,14 @@ a <- PubmedPlot::search_term_by_year('"Mendelian randomisation" [tiab] OR "Mende
 #> Fetching records 5501 to 6000 
 #> Fetching records 6001 to 6500 
 #> Fetching records 6501 to 7000 
-#> Fetching records 7001 to 7112 
+#> Fetching records 7001 to 7131 
 #> Searching for year: 2026 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2026/01/01"[dp] : "2026/12/31"[dp]) 
-#> Found 1337 articles matching the search term.
+#> Found 1565 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
-#> Fetching records 1001 to 1337
+#> Fetching records 1001 to 1500 
+#> Fetching records 1501 to 1565
 # write_json(a, "pubmed_abstracts.json", pretty=TRUE)
 b <- group_by_time_interval(a)
 p <- plot_time_interval(b)
