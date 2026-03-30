@@ -155,11 +155,11 @@ a <- PubmedPlot::search_term_by_year('"Mendelian randomisation" [tiab] OR "Mende
 #> Fetching records 7001 to 7131 
 #> Searching for year: 2026 
 #> Search term: "Mendelian randomisation" [tiab] OR "Mendelian randomization" [tiab] AND ("2026/01/01"[dp] : "2026/12/31"[dp]) 
-#> Found 1565 articles matching the search term.
+#> Found 1684 articles matching the search term.
 #> Fetching records 1 to 500 
 #> Fetching records 501 to 1000 
 #> Fetching records 1001 to 1500 
-#> Fetching records 1501 to 1565
+#> Fetching records 1501 to 1684
 # write_json(a, "pubmed_abstracts.json", pretty=TRUE)
 b <- group_by_time_interval(a)
 p <- plot_time_interval(b)
