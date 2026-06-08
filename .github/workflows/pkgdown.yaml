@@ -39,6 +39,13 @@ jobs:
           extra-packages: any::pkgdown, local::.
           needs: website
 
+      - name: Refresh PubMed data
+        run: Rscript data-raw/mr_pubmed.R
+        continue-on-error: true
+
+      - name: Reinstall package with refreshed data
+        run: R CMD INSTALL --no-multiarch --with-keep.source .
+
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
