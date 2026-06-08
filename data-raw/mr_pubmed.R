@@ -29,5 +29,5 @@ if (file.exists(rda_path)) {
   mr_pubmed <- PubmedPlot::search_term_by_year(sterm, 2003:current_year)
 }
 
-save(mr_pubmed, file = rda_path, compress = "bzip2")
+save(mr_pubmed, file = rda_path, compress = "xz")
 cat("Saved", nrow(mr_pubmed), "records to", rda_path, "\n")
